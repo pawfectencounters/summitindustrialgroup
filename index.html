@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Summit Industrial Group | 仓库货架服务范围</title>
+  <style>
+    :root {
+      --bg: #fff8f2;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #ea6a1b;
+      --primary-dark: #c84f08;
+      --accent: #2f5d50;
+      --line: #f1dfd2;
+      --soft: #fff1e7;
+      --shadow: 0 12px 30px rgba(31, 41, 55, 0.08);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(234,106,27,0.14), transparent 24%),
+        radial-gradient(circle at left bottom, rgba(47,93,80,0.10), transparent 22%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 42px 0 30px;
+    }
+
+    .hero-box {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      background: linear-gradient(135deg, #fffaf6 0%, #fff 100%);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      padding: 48px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      border: 1px solid #ffd8bf;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-copy p {
+      margin: 0 0 22px;
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      padding: 14px 20px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 10px 24px rgba(234,106,27,0.22);
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); background: var(--primary-dark); }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: #fff;
+    }
+
+    .hero-art {
+      min-height: 100%;
+      padding: 24px;
+      background: linear-gradient(180deg, #fff4ea 0%, #fff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-svg {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      display: block;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 26px 0 12px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.15;
+    }
+
+    .section-subtitle {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 760px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -40% auto;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(234,106,27,0.09), transparent 70%);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--soft);
+      color: var(--primary-dark);
+      font-size: 24px;
+      margin-bottom: 16px;
+      border: 1px solid #ffd9c1;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .feature-wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .list-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .list-card li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--text);
+    }
+
+    .list-card li span {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      display: inline-grid;
+      place-items: center;
+      font-size: 14px;
+      font-weight: 800;
+      flex: 0 0 28px;
+      margin-top: 2px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 94px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .timeline-item strong {
+      color: var(--accent);
+    }
+
+    .clients {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .pill {
+      padding: 16px;
+      border-radius: 16px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      font-weight: 700;
+    }
+
+    .closing {
+      background: linear-gradient(135deg, #2f5d50 0%, #1f3c34 100%);
+      color: white;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .closing::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 68%);
+      border-radius: 50%;
+    }
+
+    .closing p {
+      color: rgba(255,255,255,0.82);
+      margin: 10px 0 0;
+      max-width: 620px;
+    }
+
+    .closing-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 22px;
+      padding: 22px;
+      backdrop-filter: blur(4px);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .contact-item {
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 14px;
+    }
+
+    footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-box,
+      .feature-wrap,
+      .closing,
+      .service-grid,
+      .clients,
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+      .service-grid .card:last-child { grid-column: span 2; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-box,
+      .feature-wrap,
+      .closing,
+      .service-grid,
+      .clients,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+      .service-grid .card:last-child { grid-column: auto; }
+      .hero-copy { padding: 30px 24px; }
+      .hero-art { padding: 16px; }
+      .timeline-item { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-box">
+        <div class="hero-copy">
+          <div class="eyebrow">Summit Industrial Group · 仓库货架系统服务</div>
+          <h1>专注仓库货架<br>安装设计施工</h1>
+          <p>
+            我们围绕仓库货架系统，为客户提供从现场评估、方案设计、permit 配合到安装施工、拆除搬迁、二手货架回收的一站式服务，帮助企业更高效地利用仓储空间。
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#services">查看服务范围</a>
+            <a class="btn btn-secondary" href="#contact">获取项目沟通</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <svg class="hero-svg" viewBox="0 0 620 460" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="仓库货架插图">
+            <rect x="35" y="70" width="550" height="320" rx="30" fill="#FFF8F2" stroke="#F1DFD2"/>
+            <rect x="85" y="120" width="450" height="220" rx="18" fill="#FFFFFF" stroke="#EED9C9"/>
+            <rect x="120" y="140" width="12" height="180" rx="6" fill="#2F5D50"/>
+            <rect x="224" y="140" width="12" height="180" rx="6" fill="#2F5D50"/>
+            <rect x="328" y="140" width="12" height="180" rx="6" fill="#2F5D50"/>
+            <rect x="432" y="140" width="12" height="180" rx="6" fill="#2F5D50"/>
+            <rect x="120" y="156" width="324" height="10" rx="5" fill="#EA6A1B"/>
+            <rect x="120" y="216" width="324" height="10" rx="5" fill="#EA6A1B"/>
+            <rect x="120" y="276" width="324" height="10" rx="5" fill="#EA6A1B"/>
+            <rect x="137" y="170" width="55" height="34" rx="8" fill="#FFD3B1"/>
+            <rect x="241" y="170" width="55" height="34" rx="8" fill="#FFE2CD"/>
+            <rect x="345" y="170" width="55" height="34" rx="8" fill="#FFD3B1"/>
+            <rect x="137" y="230" width="55" height="34" rx="8" fill="#FFE2CD"/>
+            <rect x="241" y="230" width="55" height="34" rx="8" fill="#FFD3B1"/>
+            <rect x="345" y="230" width="55" height="34" rx="8" fill="#FFE2CD"/>
+            <rect x="137" y="290" width="55" height="20" rx="6" fill="#D0E4DB"/>
+            <rect x="241" y="290" width="55" height="20" rx="6" fill="#D0E4DB"/>
+            <rect x="345" y="290" width="55" height="20" rx="6" fill="#D0E4DB"/>
+            <rect x="470" y="205" width="42" height="92" rx="12" fill="#2F5D50"/>
+            <rect x="500" y="160" width="12" height="122" rx="6" fill="#EA6A1B"/>
+            <circle cx="485" cy="315" r="12" fill="#374151"/>
+            <circle cx="525" cy="315" r="12" fill="#374151"/>
+            <path d="M74 110C74 88.4609 91.4609 71 113 71H265V110H74Z" fill="#EA6A1B" fill-opacity="0.08"/>
+            <circle cx="525" cy="82" r="34" fill="#FFF1E7" stroke="#F1DFD2"/>
+            <path d="M505 82H545" stroke="#EA6A1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M525 62V102" stroke="#EA6A1B" stroke-width="3" stroke-linecap="round"/>
+            <path d="M512 70C518 75 532 89 538 94" stroke="#2F5D50" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>安装施工</strong>
+          标准化执行与现场落地
+        </div>
+        <div class="stat">
+          <strong>设计规划</strong>
+          围绕仓容、动线与效率优化
+        </div>
+        <div class="stat">
+          <strong>拆除回收</strong>
+          二手货架评估、回收与再利用
+        </div>
+        <div class="stat">
+          <strong>报批配合</strong>
+          协助 permit 流程推进
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="section-title">核心服务范围</h2>
+      <p class="section-subtitle">
+        以仓库货架系统为核心，我们提供覆盖前期规划、中期施工到后期调整升级的完整服务，更适合海外仓、电商仓、制造业仓和第三方物流仓等场景。
+      </p>
+
+      <div class="service-grid">
+        <article class="card">
+          <div class="icon">🏗️</div>
+          <h3>货架安装与施工</h3>
+          <p>提供 selective pallet racking 等仓储货架的安装、组装、定位、调平、固定与现场施工服务，确保系统安全、稳定、实用。</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">📐</div>
+          <h3>仓储方案设计</h3>
+          <p>根据仓库面积、净高、托盘规格、叉车类型、出入库流程与业务需求，规划货架布局、通道宽度、收发货区与拣货区配置。</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🧰</div>
+          <h3>货架拆除与搬迁</h3>
+          <p>支持旧仓清场、货架拆除、分类打包、装车转运及异地重装，帮助客户在搬仓、扩仓或重组布局时减少停工影响。</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">♻️</div>
+          <h3>二手货架回收</h3>
+          <p>回收各类二手货架及配件，包括立柱、横梁、网片、防撞件等，并可结合客户预算提供再利用与混合配置方案。</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">📝</div>
+          <h3>Permit 申请配合</h3>
+          <p>针对需要申报审批的货架项目，提供现场信息整理、测量资料、方案对接、图纸协调与报批流程配合服务。</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🛡️</div>
+          <h3>安全配套与升级改造</h3>
+          <p>可配合安装护角、guard rail、安全网片、区域标识等安全配套，并提供货架加层、调整、扩建和仓容优化服务。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="feature-wrap">
+        <div class="card list-card">
+          <h2 class="section-title" style="font-size:30px; margin-bottom:18px;">可延伸服务</h2>
+          <ul>
+            <li><span>01</span><div><strong>现场测量与项目评估</strong><br>对仓库净高、柱网、门位、dock、消防与作业动线进行基础评估。</div></li>
+            <li><span>02</span><div><strong>新旧货架混合方案</strong><br>兼顾预算与使用需求，组合新货架、二手货架及局部升级方案。</div></li>
+            <li><span>03</span><div><strong>仓库空间利用优化</strong><br>帮助客户提高库容、优化货位数量并改善操作效率。</div></li>
+            <li><span>04</span><div><strong>仓储设备安装协作</strong><br>根据项目需要，配合完成围绕仓储系统的基础安装与现场协调。</div></li>
+            <li><span>05</span><div><strong>后期调整维护</strong><br>针对业务变化，提供货架调整、重新分区与扩容改造支持。</div></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2 class="section-title" style="font-size:30px; margin-bottom:18px;">服务流程</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>Step 1</strong>
+              <div><strong>需求沟通</strong><br>了解仓库尺寸、货物类型、托盘规格、叉车类型与目标库容。</div>
+            </div>
+            <div class="timeline-item">
+              <strong>Step 2</strong>
+              <div><strong>现场评估</strong><br>确认空间条件、门位动线、施工条件与是否涉及 permit。</div>
+            </div>
+            <div class="timeline-item">
+              <strong>Step 3</strong>
+              <div><strong>方案与报价</strong><br>输出货架配置建议、施工范围与项目报价。</div>
+            </div>
+            <div class="timeline-item">
+              <strong>Step 4</strong>
+              <div><strong>施工执行</strong><br>按计划完成安装、拆除、搬迁或改造，并配合项目推进。</div>
+            </div>
+            <div class="timeline-item">
+              <strong>Step 5</strong>
+              <div><strong>交付与调整</strong><br>根据实际运营反馈进行细节优化与后续支持。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">适用客户类型</h2>
+      <p class="section-subtitle">适用于有仓储搭建、升级、搬迁、扩容和货架改造需求的各类企业。</p>
+      <div class="clients">
+        <div class="pill">电商仓库</div>
+        <div class="pill">海外仓</div>
+        <div class="pill">批发分销仓</div>
+        <div class="pill">制造业仓储</div>
+        <div class="pill">第三方物流仓</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="closing">
+        <div>
+          <h2 class="section-title" style="color:white; margin-bottom:0;">让仓库空间更高效，让项目落地更省心</h2>
+          <p>
+            我们专注于仓库货架安装设计施工，同时覆盖拆除、回收、搬迁、permit 配合与升级改造等服务，帮助客户更快完成仓储系统落地。
+          </p>
+        </div>
+        <div class="closing-box">
+          <strong style="font-size:18px; display:block; margin-bottom:10px;">联系 Summit Industrial Group</strong>
+          <div class="contact-list">
+            <div class="contact-item">公司名称：Summit Industrial Group</div>
+            <div class="contact-item">联系电话：951-742-2756</div>
+            <div class="contact-item">服务区域：Southern California / North America</div>
+            <div class="contact-item">主营方向：Racking Installation · Layout Planning · Permit Support</div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © Summit Industrial Group · Warehouse Racking Installation, Layout Planning, Permit Support & Project Execution
+  </footer>
+</body>
+</html>
